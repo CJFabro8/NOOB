@@ -1,0 +1,19 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("LiboHub - Kill Slenders And Copy paste", "Serpent")
+
+local Tab = Window:NewTab("LiboHub")
+
+local Section = Tab:NewSection("Welcome to LiboHub")
+
+local Tab1 = Window:NewTab("Main")
+
+local Tab1 = Tab1:NewSection("Main")
+
+Tab1:NewButton("Print", "Prints", function()
+    print("LiboHub")
+end)
+
+Tab1:NewButton("Pay to win room", "weapons still require gamepass", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1437.5511474609375, 222.3493194580078, -659.1800537109375)
+end)
