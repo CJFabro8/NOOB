@@ -4,7 +4,7 @@ local Window = Library.CreateLib("LiboHub - Kill Slenders And Copy paste", "Serp
 
 local Tab = Window:NewTab("LiboHub")
 
-local Section = Tab:NewSection("Welcome to LiboHub")
+local Section = Tab:NewSection("Welcome to LiboHub - Wip")
 
 local Tab1 = Window:NewTab("Main")
 
@@ -16,4 +16,58 @@ end)
 
 Tab1:NewButton("Pay to win room", "weapons still require gamepass", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1437.5511474609375, 222.3493194580078, -659.1800537109375)
+end)
+
+Tab1:NewButton("AutoHitKatana", "UnEquip weapon to stop it.", function()
+    game:GetService("Players").LocalPlayer.Character.Katana.RemoteClick:FireServer()
+end)
+
+Tab1:NewDropdown("DropdownText", "DropdownInf", {"Option 1", "Option 2", "Option 3"}, function(currentOption)
+    print(currentOption)
+end)
+
+local Tab2 = Window:NewTab("LocalPlayer")
+
+local Tab2 = Tab2:NewSection("LocalPlayer")
+
+Tab2:NewSlider("Walkspeed", "Changes the player walkspeed", 250, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Tab2:NewSlider("JumpPower", "Changes the player walkspeed", 500, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+Tab2:NewToggle("Godmode", "Grants The Player God Mode", function(v)
+    getgenv().godmode = v
+    while true do
+        if not getgenv().godmode then return end
+        print("Debug")
+        game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+        wait()
+    end
+end)
+
+Tab2:NewButton("Heal ", "Heal the Player Once To max health", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = math.huge
+end)
+
+local Tab3 = Window:NewTab("Teleport")
+
+local Tab3 = Tab3:NewSection("Teleport")
+
+Tab3:NewButton("Go to map", "tps you to the map.", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.8112182617188, 247.86436462402344, -698.89599609375)
+end)
+
+Tab3:NewButton("Go to Medical Stuff", "tps you to the medical stuffs.", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1216.71435546875, 173.9019317626953, -690.2565307617188)
+end)
+
+Tab3:NewButton("Go to Top of building", "tps you to the top of the building.", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-394.47515869140625, 273.255126953125, -635.2522583007812)
+end)
+
+Tab3:NewButton("Go to map2", "tps you to the other map.", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-684.9191284179688, 245.09034729003906, -280.2178649902344)
 end)
